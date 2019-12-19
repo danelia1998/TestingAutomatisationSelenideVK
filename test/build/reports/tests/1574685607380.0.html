@@ -1,0 +1,137 @@
+<html lang="en"><head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" href="/images/icons/favicons/fav_logo.ico?6">
+
+<link rel="apple-touch-icon" href="/images/icons/pwa/apple/default.png?8">
+
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<meta name="description" content="VK is the largest European social network with more than 100 million active users. Our goal is to keep old friends, ex-classmates, neighbors and colleagues in touch.">
+
+
+<title>Welcome! | VK</title>
+
+<noscript><meta http-equiv="refresh" content="0; URL=/badbrowser.php"></noscript>
+
+<link rel="stylesheet" type="text/css" href="/css/al/common.css?80444645167"><link rel="stylesheet" type="text/css" href="/css/al/base.css?1"><link rel="stylesheet" type="text/css" href="/css/al/fonts_utf.css?1"><link rel="stylesheet" type="text/css" href="/css/al/fonts_cnt.css?2660709036">
+
+<script type="text/javascript">
+(function() {
+var alertCont;
+function trackOldBrowserEvent(event) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '/badbrowser_stat.php?act=track&event=' + event);
+  xhr.send();
+}
+function exposeGlobals() {
+  window.hideOldBrowser = function() {
+    alertCont.remove();
+    var date = new Date();
+    date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
+    var expiresDate = date.toGMTString();
+    var domain = window.locDomain;
+    document.cookie = 'remixoldbshown=1; expires=' + expiresDate + '; path=/' + (domain ? '; domain=.' + domain : '') + ';secure';
+    trackOldBrowserEvent('hideAlert');
+  }
+}
+function checkOldBrowser() {
+  if(!document.body) {
+    setTimeout(checkOldBrowser, 100);
+    return;
+  }
+  try {
+    if (!('CSS' in window && CSS.supports('display', 'flex')) || typeof Symbol === 'undefined') {
+      exposeGlobals();
+      var alert = '<div class="OldBrowser__container" style="width:960px;">  For speed and stability when using VK, install <a href="/badbrowser.php?source=old_browser_alert" target="_blank">one of these browsers</a>.  <span class="OldBrowser__close" onclick="hideOldBrowser();"></span></div>';
+      alertCont = document.createElement('div');
+      alertCont.className = 'OldBrowser';
+      alertCont.id = 'old_browser_wrap';
+      alertCont.innerHTML = alert;
+      document.body.appendChild(alertCont);
+      trackOldBrowserEvent('showAlert');
+    }
+  } catch(e) {}
+}
+checkOldBrowser();
+})();
+var vk = {
+  ads_rotate_interval: 120000,
+  al: parseInt('3') || 4,
+  id: 0,
+  intnat: '1' ? true : false,
+  host: 'vk.com',
+  loginDomain: 'https://login.vk.com/',
+  lang: 3,
+  loaderNavSection: '',
+  rtl: parseInt('') || 0,
+  version: 15754740,
+  stDomains: 0,
+  stDomain: '',
+  stExcludedMasks: ["loader_nav","lang"],
+  zero: false,
+  contlen: 11465,
+  loginscheme: 'https',
+  ip_h: '97fca189dbdbd18182',
+  navPrefix: '/',
+  dt: parseInt('0') || 0,
+  fs: parseInt('13') || 13,
+  ts: 1574685604,
+  tz: 10800,
+  pd: 0,
+  css_dir: '',
+  vcost: 7,
+  time: [2019, 11, 25, 15, 40, 4],
+  sampleUser: -1, spentLastSendTS: new Date().getTime(),
+  a11y: 0,
+  statusExportHash: '',
+  audioAdsConfig: {"_":"_"},
+  longViewTestGroup: "every_view",
+  cma: 1,
+  lpConfig: {
+    enabled: 0,
+    key: '',
+    ts: 0,
+    url: '',
+    lpstat: 0
+  },
+
+  pr_tpl: "<div class=\"pr %cls%\" id=\"%id%\"><div class=\"pr_bt\"><\/div><div class=\"pr_bt\"><\/div><div class=\"pr_bt\"><\/div><\/div>",
+
+  audioInlinePlayerTpl: "<div class=\"audio_inline_player _audio_inline_player no_select\">\n  <div class=\"audio_inline_player_right\">\n    <div class=\"audio_inline_player_volume\"><\/div>\n  <\/div>\n  <div class=\"audio_inline_player_left\">\n    <div class=\"audio_inline_player_progress\"><\/div>\n  <\/div>\n<\/div>",
+
+  tnsPixelType: 'unauth',
+  tnsPixelSocdem: '13',
+
+  pe: {"search_attempt_stats":1,"search_position_stats":1,"article_poll":1,"vk_apps_svg_qr":1,"upload.send_upload_stat":1,"push_notifier":1,"audio_artist_new_catalog":1,"story_reactions_web":1,"notify_new_events_box":1,"web_ajax_json_object":1,"mini_apps_web_add_to_favorites":1,"cookie_class_samesite":1,"cookie_secure_default_true":1,"mvk_skeleton_animation":1,"mvk_new_info_snackbar":1,"stickers_suggestions_convert_layout":1}
+};;vk.rv="22029";;if (!window.constants) { window.constants = {Groups: {
+  GROUPS_ADMIN_LEVEL_USER: 0,
+  GROUPS_ADMIN_LEVEL_MODERATOR: 1,
+  GROUPS_ADMIN_LEVEL_EDITOR: 2,
+  GROUPS_ADMIN_LEVEL_ADMINISTRATOR: 3,
+  GROUPS_ADMIN_LEVEL_HOST: 4,
+  GROUPS_ADMIN_LEVEL_EVENT_CREATOR: 5,
+  GROUPS_ADMIN_LEVEL_CREATOR: 6,
+  GROUPS_ADMIN_PSEUDO_LEVEL_ADVERTISER: 100
+}}; };
+
+window.locDomain = vk.host.match(/[a-zA-Z]+\.[a-zA-Z]+\.?$/)[0];
+var _ua = navigator.userAgent.toLowerCase();
+if (/opera/i.test(_ua) || !/msie 6/i.test(_ua) || document.domain != locDomain) document.domain = locDomain;
+var ___htest = (location.toString().match(/#(.*)/) || {})[1] || '', ___to;
+___htest = ___htest.split('#').pop();
+if (vk.al != 1 && ___htest.length && ___htest.substr(0, 1) == vk.navPrefix) {
+  if (vk.al != 3 || vk.navPrefix != '!') {
+    ___to = ___htest.replace(/^(\/|!)/, '');
+    if (___to.match(/^([^\?]*\.php|login|mobile|away)([^a-z0-9\.]|$)/)) ___to = '';
+    location.replace(location.protocol + '//' + location.host + '/' + ___to);
+  }
+}
+
+var StaticFiles = {
+  'cmodules/web/common_web.js' : {v: '93'},
+  'common.css':{v:80444645167},'base.css':{v:1},'fonts_utf.css':{v:1},'fonts_cnt.css':{v:2660709036}
+  ,'cmodules/bundles/audioplayer.a45b5fb12fd4e8b77dc0.js':{v:'275aa69cc368016a965f'},'cmodules/bundles/common.2844cb9aff24e0e695ff.js':{v:'eba55173a308062c059e'},'cmodules/web/common_web.7f331db8431df15b7d48.js':{v:'33dc0f8234143e5e517407005f303368'},'lang3_0.js': {v: 26244760},'index.css':{v:28104241562},'cmodules/web/index.9e2d527fd623fdce081b.js':{v:'959d68554e308dff0137a3c99ad5d714'},'cmodules/web/index.js':{v:34},'login.css':{v:35504792448},'ui_controls.css':{v:25027366487},'ui_controls.js':{v:606078431},'cmodules/web/time_spent.8b79e9a0681ddae67d37.js':{v:'23ff01074cd800dc0ddc'},'cmodules/web/time_spent.js':{v:2},'cmodules/web/page_layout.f815b424a63b88795873.js':{v:'ba2d0254e73acd4ce514'},'cmodules/web/page_layout.js':{v:1},'cmodules/bundles/a0695912ff27d00306b79cb1d9e5a7be.a75708dc5fcad49bd7a7.js':{v:'09b309cbeee75c2ab421'},'cmodules/bundles/cd736fe34acb680ee846b48dbacd00f8.f6ecb4e51f7a8cbc5af7.js':{v:'a7da2fd9801db4b847b1'},'cmodules/web/ui_common.ea481649e66e22d8708f.js':{v:'1f063760114ebea679d1f566c5cdb174'},'ui_common.js':{v:6},'ui_common.css':{v:23799187810},'cmodules/web/likes.c2997c866f8bc4ef08a6.js':{v:'3a7d888971fdac5dfc231ff1a215e31d'},'cmodules/web/likes.js':{v:1}
+}
+var abp;
+</script>
+
+<link type="text/css" rel="stylesheet" href="/css/al/index.css?28104241562"><link type="text/css" rel="stylesheet" href="/css/al/login.css?35504792448"><link type="text/css" rel="stylesheet" href="/css/ui_controls.css?25027366487"><link type="text/css" rel="stylesheet" href="/css/al/ui_common.css?23799187810"><script type="text/javascript" src="/js/loader_nav15754740_3.js"></script><script type="text/javascript" src="/js/cmodules/bundles/audioplayer.a45b5fb12fd4e8b77dc0.js?275aa69cc368016a965f"></script><script type="text/javascript" src="/js/cmodules/bundles/common.2844cb9aff24e0e695ff.js?eba55173a308062c059e"></script><script type="text/javascript" src="/js/cmodules/web/common_web.7f331db8431df15b7d48.js?33dc0f8234143e5e517407005f303368"></script><script type="text/javascript" src="/js/lang3_0.js?26244760"></script></head></html>
