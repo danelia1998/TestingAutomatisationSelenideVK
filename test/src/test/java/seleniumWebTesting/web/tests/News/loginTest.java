@@ -37,7 +37,7 @@ public class loginTest extends ChromeRunner {
         step2.enterMusicSection();
         step2.searchingMusic(songName);
         step2.playSong();
-        Thread.sleep(60000);
+        Thread.sleep(10000);
 
         afterEachSteps closing = new afterEachSteps();
         closing.closeBrowserAndClearCookies();

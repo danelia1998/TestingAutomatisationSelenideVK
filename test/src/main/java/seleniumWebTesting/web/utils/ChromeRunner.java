@@ -6,6 +6,7 @@ import static seleniumWebTesting.web.dataObjects.UrlData.loginPageUrl;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 
+
 public abstract class ChromeRunner {
 
     @BeforeAll
