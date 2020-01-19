@@ -3,19 +3,35 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
 
     <groupId>test</groupId>
     <artifactId>test</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 
- <!--       <dependency>
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.8</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.14.3</version>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>com.codeborne</groupId>
@@ -23,23 +39,33 @@
             <version>5.4.1</version>
         </dependency>
 
-        <dependency>
+        <!--dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
+            <version>4.13-beta-1</version>
+        </dependency-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.junit.jupiter</groupId>-->
+<!--            <artifactId>junit-jupiter-engine</artifactId>-->
+<!--            <version>5.4.0</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.0.0-M1</version>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>5.4.0-M1</version>
+            <scope>test</scope>
         </dependency>
+
 
         <dependency>
             <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-selenide</artifactId>
+            <artifactId>allure-junit5</artifactId>
             <version>2.13.0</version>
         </dependency>
+
+
 
         <dependency>
             <groupId>com.github.javafaker</groupId>
